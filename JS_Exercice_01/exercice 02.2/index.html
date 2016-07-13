@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercice 6</title>
+  </head>
+  <body>
+      <img src="images/image1.jpg" id="image1" onmouseover="rollover(this)" onmouseout="mouseaway(this)" />
+      <img src="images/image2.jpg" id="image2" onmouseover="rollover(this)" />
+      <img src="images/image3.jpg" id="image3" onmouseover="rollover(this)" />
+      <img src="images/image4.jpg" id="image4" onmouseover="rollover(this)" />
+      <img src="images/image5.jpg" id="image5" onmouseover="rollover(this)" />
+
+  <script type="text/javascript">
+    function rollover(my_image)
+    {
+      my_image.src = 'images/image1_2.jpg';
+
+}
+</script>
+
+<script type="text/javascript">
+
+    function mouseaway(my_image)
+    {
+     my_image.src = 'images/image1.jpg';
+
+    }
+</script>
+  </body>
+</html>
