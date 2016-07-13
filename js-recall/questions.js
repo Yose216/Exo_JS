@@ -37,27 +37,43 @@ var reverseWordsInArray = function(array) {
 }
 
 var everyPossiblePair = function(array) {
-    return 'Write your method here';
+    /*function everyPossible (element) {
+        return element
+    }
+    return array(everyPossible);*/
 }
 
 var allElementsExceptFirstThree = function(array) {
-    return 'Write your method here';
+        result = array.slice(3);
+        return result;  
 }
 
 var addElementToBeginning = function(array, element) {
-    return 'Write your method here';
+    ajout = array.unshift(element);
+    return array;
 }
 
 var sortByLastLetter = function(array) {
-    return 'Write your method here';
+function isPalindrome(word){
+  for (var i = 0; i < array.length; i++) {
+    if (word.length > 2) {
+      return true;
+      var first = word.shift();
+      var last = word.pop();
+      if(first !== last) {
+        return array.reduce(isPalindrome);
+      }
+    }
+  }
+}
 }
 
 var getFirstHalf = function(string) {
-    return 'Write your method here';
+ return string.slice(0,3);
 }
 
 var makeNegative = function(number) {
-    return 'Write your method here';
+ return Math.abs(number) * -1;
 }
 
 var numberOfPalindromes = function(array) {
@@ -65,7 +81,7 @@ var numberOfPalindromes = function(array) {
 }
 
 var shortestWord = function(array) {
-    return 'Write your method here';
+return 'Write your method here';
 }
 
 var longestWord = function(array) {
