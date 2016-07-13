@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Exercice 4</title>
+</head>
+<body>
+  <form>
+    <label for="motdepasse">Votre mot de passe : </label><input type="text" name="motdepasse" value="" id="motdepasse" />
+    <label for="confirmation">Confirmez : </label><input type="text" name="confirmation" value="" id="confirmation" onblur="verifMdp2(this)"/>
+    <button type="button" name="button" >Vérification</button>
+  </form>
+  <script>
+
+  function surligne(champ, erreur)
+{
+   if(erreur)
+      champ.style.borderColor = "red";
+   else
+      champ.style.borderColor = "green";
+}
+ 
+function verifMdp2(champ)
+{
+   if(champ.value != document.getElementById('motdepasse').value)
+   {
+      surligne(champ, true);
+      return false;
+   }
+   else
+   {
+      surligne(champ, false);
+      return true;
+   }
+}
+</script>
+</body>
+</html>
