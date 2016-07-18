@@ -37,11 +37,16 @@ var reverseWordsInArray = function(array) {
 }
 
 var everyPossiblePair = function(array) {
-    /*function everyPossible (element) {
-        return element
-    }
-    return array(everyPossible);*/
-}
+ var tab =[];
+ var tabInverser = array.slice().reverse(); 
+ for (var student1 of array) { 
+   tabInverser.pop();
+   for (var student2 of tabInverser) { 
+     tab.push([student1, student2].sort());
+   }
+ }
+ return tab.sort();
+};
 
 var allElementsExceptFirstThree = function(array) {
         result = array.slice(3);
@@ -54,18 +59,19 @@ var addElementToBeginning = function(array, element) {
 }
 
 var sortByLastLetter = function(array) {
-function isPalindrome(word){
-  for (var i = 0; i < array.length; i++) {
-    if (word.length > 2) {
-      return true;
-      var first = word.shift();
-      var last = word.pop();
-      if(first !== last) {
-        return array.reduce(isPalindrome);
-      }
+  function derniereLettre(element1, element2) {
+        var lettre1 = element1[element1.length-1];
+        var lettre2 = element2[element2.length-1];
+
+        if (lettre1 > lettre2) {
+            return 1;
+        }
+        else if (lettre1 < lettre2) {
+            return -1;
+        }
+        return 0;
     }
-  }
-}
+  return array.sort(derniereLettre);
 }
 
 var getFirstHalf = function(string) {
@@ -77,31 +83,67 @@ var makeNegative = function(number) {
 }
 
 var numberOfPalindromes = function(array) {
-    return 'Write your method here';
+  var countPalindromes = 0,
+      motInverse = array.slice(); 
+
+  function reverseStrings(element) { 
+    element = element.split('').reverse().join('');
+    return element;
+  }
+  motInverse = motInverse.map(reverseStrings); 
+
+  for (var i = 0, c = array.length; i < c; i++) { 
+    if (array[i] === motInverse[i]) {
+      countPalindromes++; 
+    }
+  }
+  return countPalindromes;
 }
 
 var shortestWord = function(array) {
-return 'Write your method here';
+  function longueur (a, b) { 
+    return a.length - b.length;
+}
+result = array.sort(longueur); 
+  return result[0]; 
 }
 
 var longestWord = function(array) {
-    return 'Write your method here';
+    function long(a, b) { 
+        return b.length - a.length; 
+}
+result = array.sort(long)
+    return result[0];
 }
 
 var sumNumbers = function(array) {
-    return 'Write your method here';
+    var result = 0;
+    for(var i = 0, c = array.length; i < c; i++) {
+        result += array[i];
+    }
+    return result;
 }
 
 var repeatElements = function(array) {
-    return 'Write your method here';
+  var newTab = array.slice(); 
+
+  for (var i = 0, c = array.length; i < c; i ++) { 
+    array.push(newTab[i]);
+  }
+  return array;
 }
 
 var stringToNumber = function(string) {
-    return 'Write your method here';
+    result = parseInt(string);
+    return result;
 }
 
 var calculateAverage = function(array) {
-    return 'Write your method here';
+       var result = 0;
+    for(var i = 0, c = array.length; i < c; i++) {
+        result += array[i];
+    }
+    return result/array.length;
 }
 
 var getElementsUntilGreaterThanFive = function(array) {
